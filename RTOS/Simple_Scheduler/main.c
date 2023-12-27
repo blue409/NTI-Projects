@@ -32,7 +32,7 @@ int main(void)
 	return 0;
 }
 
-void App1(void)       //called every 1 sec...through callback concept
+void App1(void)       
 {
 	DIO_togglePin(PORTB_ID,PIN7_ID);
 }
