@@ -2,7 +2,7 @@
  * Kernel_interface.h
  *
  *  Created on: Nov 20, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 
 #ifndef KERNEL_INTERFACE_H_
