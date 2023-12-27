@@ -2,7 +2,7 @@
  * seven_segment.h
  *
  *  Created on: Oct 21, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 #include "BIT_MATH.h"
 #include "STD_TYPES.h"
