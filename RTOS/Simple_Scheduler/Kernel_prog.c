@@ -2,7 +2,7 @@
  * Kernel_prog.c
  *
  *  Created on: Nov 20, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 #include"Kernel_interface.h"
 #include"Kernel_config.h"
