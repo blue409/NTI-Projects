@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: Nov 19, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 #include "Timer2_Driver.h"
 #include "GIE.h"
