@@ -2,7 +2,7 @@
  * Kernel_config.h
  *
  *  Created on: Nov 20, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 
 #ifndef KERNEL_CONFIG_H_
