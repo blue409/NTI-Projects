@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: Oct 24, 2023
- *  Author: dell
+ *  Author: Menna Sayed
  ******************************************************/
 #include "LCD.h"
 #include "ADC.h"
