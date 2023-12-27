@@ -2,17 +2,17 @@
  * main.c
  *
  *  Created on:  Dec 3 , 2023
- *  Author: dell
+ *  Author: Menna Sayed
  */
 
 /*MCAL*/
-
+#include "BIT_MATH.h"
+#include "DIO_interface.h"
 /*FreeRTOS*/
 #include "FreeRTOS.h"
 #include "task.h"
 #include "semphr.h"
-#include "BIT_MATH.h"
-#include "DIO_interface.h"
+/*HAL*/
 #include "seven_segment.h" 
 #define F_CPU 16000000
 
@@ -55,7 +55,7 @@ int main()
 	xTaskCreate(YELLOW_LIGHT,(const char*)"YELLO",800,NULL,TASK4_PRIORITY,&xTask3_H);
 	xTaskCreate(GREEN_LIGHT,(const char*)"GREEN",800,NULL,TASK3_PRIORITY,&xTask4_H);
 
-	 vTaskStartScheduler();
+        vTaskStartScheduler();
 
     while(1)
     {
@@ -68,13 +68,10 @@ int main()
 
 void COUNTER_States(void* pvParameters)
 {
-	vTaskDelay(1000);
-	if( xSemaphore_Seconds != NULL )
-	{
-//		if( xSemaphoreTake(xSemaphore_Seconds, ( TickType_t ) 50 ) == pdTRUE )
-//		{
-		xSemaphoreTake(xSemaphore_Seconds, ( TickType_t ) portMAX_DELAY );
-//		{
+     vTaskDelay(1000);   //Task Periodicity
+     if( xSemaphore_Seconds != NULL )
+      {
+	  xSemaphoreTake(xSemaphore_Seconds, ( TickType_t ) portMAX_DELAY );
           if(Total_sec_counter == 0)
            {
         	   seconds=90; //RED STATE
@@ -92,15 +89,9 @@ void COUNTER_States(void* pvParameters)
 		   seconds=90; //RED STATE---re enter
 		   Total_sec_counter = 0;
 		  }
-          seconds--;
-          Total_sec_counter++;
-		  xSemaphoreGive(xSemaphore_Seconds);
-//		}
-//		else
-//		{
-			/* We could not obtain the semaphore and can therefore not access the shared resource safely. */
-//		}
-	 // }
+              seconds--;
+              Total_sec_counter++;
+	      xSemaphoreGive(xSemaphore_Seconds);
 	}
 	else
 	{
@@ -108,12 +99,11 @@ void COUNTER_States(void* pvParameters)
 	}
     while(1)
     {
-    //	DIO_voidSetPortValue(DIO_PORTC,Total_sec_counter);
-    //	vTaskDelay(20);
+    
     }
 }
 
-void RED_LIGHT(void* pvParameters)       //called every 1 sec...through callback concept
+void RED_LIGHT(void* pvParameters)       
 {
 //	vTaskDelay(120);                     //Task Periodicity
 	while(1)
@@ -148,7 +138,6 @@ void RED_LIGHT(void* pvParameters)       //called every 1 sec...through callback
 void YELLOW_LIGHT(void* pvParameters)
 {
 	vTaskDelay(100);
-	//vTaskDelay(120);
 	while(1)
 	{
 		if( xSemaphore_Seconds != NULL )
