@@ -2,7 +2,7 @@
  * GI_interface.h
  *
  *  Created on: Oct 22, 2023
- *      Author: Kareem Hussein
+ *  Author: Menna Sayed
  */
 
 #ifndef GI_INTERFACE_H_
