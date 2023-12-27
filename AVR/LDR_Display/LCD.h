@@ -2,7 +2,7 @@
  * LCD.h
  *
  *  Created on: Oct 22, 2023
- *      Author: dell
+ *  Author: Menna Sayed
  */
 
 #ifndef LCD_H_
