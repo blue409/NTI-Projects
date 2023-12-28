@@ -2,7 +2,7 @@
  * main.c
  *
  *  Created on: Oct 23, 2023
- *  Author: dell
+ *  Author: Menna Sayed
  ************************************************************/
 
 #include <util/delay.h>
@@ -30,9 +30,9 @@ int main()
 	 _delay_ms(500);
 	while(1)
 	{
-		 LCD_GoTo(2,1);
-		 _delay_ms(50);
-		 LCD_SendChar(KEYPAD_getPressedKey());
+	 LCD_GoTo(2,1);
+	 _delay_ms(50);
+	 LCD_SendChar(KEYPAD_getPressedKey());
          num1=number;
          LCD_SendChar(KEYPAD_getPressedKey());
          Op_sign=number;
@@ -40,7 +40,7 @@ int main()
          num2=number;
          LCD_SendChar(KEYPAD_getPressedKey());//= sign
          LCD_integerTostring(operation_result(Op_sign));
-		 _delay_ms(8000);
+         _delay_ms(8000);
 
 	}
 
