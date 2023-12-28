@@ -53,16 +53,16 @@ void KEYPAD_INIT(void)
 
 uint8 KEYPAD_getPressedKey(void)
 {
-	uint8 col,row;
-	uint8 button_num =0;
-	uint8 pin_read;
-		 DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID,  LOGIC_HIGH);
-		 DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_SECOND_ROW_PIN_ID, LOGIC_HIGH);
-		 DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_THIRD_ROW_PIN_ID,  LOGIC_HIGH);
-		 DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_FOURTH_ROW_PIN_ID, LOGIC_HIGH);
+    uint8 col,row;
+    uint8 button_num =0;
+    uint8 pin_read;
+    DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_FIRST_ROW_PIN_ID,  LOGIC_HIGH);
+    DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_SECOND_ROW_PIN_ID, LOGIC_HIGH);
+    DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_THIRD_ROW_PIN_ID,  LOGIC_HIGH);
+    DIO_writePin(KEYPAD_ROW_PORT_ID, KEYPAD_FOURTH_ROW_PIN_ID, LOGIC_HIGH);
     for(row=0;row<KEYPAD_NUM_ROWS;row++)
     {
-		 DIO_writePin(KEYPAD_ROW_PORT_ID, rows_pins[row], LOGIC_LOW);
+         DIO_writePin(KEYPAD_ROW_PORT_ID, rows_pins[row], LOGIC_LOW);
          for(col=0;col<KEYPAD_NUM_COLS;col++)
          {
         	 DIO_readPin(KEYPAD_COL_PORT_ID,colum_pins[col],&pin_read);
